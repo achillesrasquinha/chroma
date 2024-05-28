@@ -582,7 +582,7 @@ class FastAPI(ServerAPI):
             documents=body.get("documents", None),
             uris=body.get("uris", None),
             data=None,
-            included=body["included"],
+            included=body.get("included", None)
         )
 
     @trace_method("FastAPI.reset", OpenTelemetryGranularity.ALL)
